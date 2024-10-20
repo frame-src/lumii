@@ -108,7 +108,7 @@ section.project article .text{
     flex-direction: column;
     justify-content: center;
     flex: 1;
-    background: darkslategrey;
+    background: #1E201E;
     border-radius: 100px;
     padding: 6.27vw;
 }    
