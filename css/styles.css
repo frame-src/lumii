@@ -50,7 +50,7 @@ nav ul li a {
 }
 
 
-/* about */
+/* about section*/
 
 section.about .empty{
     flex-basis: 37.5vw;
@@ -82,3 +82,55 @@ section.about article .description {
     padding: 6.27vw;
     color: black;
 }
+
+/* project section */
+section.project article{
+    display: flex;
+    width: 100%;
+}
+
+section.project figure{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 56.25vw;
+    margin: 0;
+    background: lightgreen;
+    border-radius: 100px;
+}
+
+section.project figure img{
+    width:50%
+}
+
+section.project article .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    background: darkslategrey;
+    border-radius: 100px;
+    padding: 6.27vw;
+}    
+
+section.project.project-2 figure{
+    background: lightcoral;
+}
+section.project.project-3 figure{
+    background: aquamarine;
+}
+
+section.project.project-1 .text h2,
+section.project.project-1 .text a{
+    color: pink;
+}
+section.project.project-2 .text h2,
+section.project.project-2 .text a{
+    color: lightgreen;
+}
+section.project.project-3 .text h2,
+section.project.project-3 .text a{
+    color: lightcoral;
+}
+
+/* contact section */
