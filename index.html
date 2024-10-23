@@ -4,7 +4,12 @@
     <title> il Portafoglio </title>
 
     <link rel="stylesheet" href="css/styles.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Didact+Gothic&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
   </head>
   <body>
     <nav>
@@ -24,7 +29,7 @@
       </div>
       <article>
         <div class="title">
-          <h1> INTRO </h1>
+          <h1 style="font-size: xxx-large;"> HELLO :) </h1>
         </div>
         <div class="description">
           <p> 
@@ -39,7 +44,23 @@
       </article>
     </section>
 <!--                    PROJECT                      -->
-    <section id="projects" class="project project-1">
+    <section id="projects" class="project project-1 sticky">
+      <article>
+        <figure>
+          <img src="img/code.png" width="200"/>
+        </figure>
+        <div class="text">
+          <h2> WEBSERV</h2>
+          <p> Implementation of a server in C++
+            The focus of this project is to implement an HTTP/1.1 compliant server according to the RFC.
+            The server is capable of handling multiple connections using Kqueue.
+          </p>
+          <a href="https://github.com/frame-src/webserv"> More about it </a>
+        </div>
+      </article>
+    </section>
+
+    <section id="projects" class="project project-2 sticky">
       <article>
         <figure>
           <img src="img/code.png" width="200"/>
@@ -55,7 +76,7 @@
       </article>
     </section>
 
-    <section id="projects" class="project project-2">
+    <section id="projects" class="project project-3 sticky">
       <article>
         <figure>
           <img src="img/code.png" width="200"/>
@@ -71,32 +92,16 @@
       </article>
     </section>
 
-    <section id="projects" class="project project-3">
-      <article>
-        <figure>
-          <img src="img/code.png" width="200"/>
-        </figure>
-        <div class="text">
-          <h2> WEBSERV</h2>
-          <p> Nel mezzo del cammin di nostra vita
-            mi ritrovai per una selva oscura, 
-            ché la diritta via era smarrita.     
-          </p>
-          <a href="https://github.com/frame-src/webserv"> More about it </a>
-        </div>
-      </article>
-    </section>
-
-    <section id="contact">
+    <section id="contact" class="contact full-screen">
       <article>
         <div>
           <h2> CONTACT </h2>
         </div>
-        <div>
-          <p> Nel mezzo del cammin di nostra vita
-            mi ritrovai per una selva oscura, 
-            ché la diritta via era smarrita.     
-          </p>
+        <ul>
+          <li><a href="#about">email</a></li>
+          <li><a href="#projects">gitHub</a></li>
+          <li><a href="#contact">instagram</a></li>
+        </ul>
         </div>
       </article>
     </section>

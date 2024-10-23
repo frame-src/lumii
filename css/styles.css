@@ -2,13 +2,18 @@
     box-sizing: border-box;
 }
 
+/* CSS variables */
+
+
 html, body{
+    --border-radius: 100px;
+
     margin: 0;
     padding: 0;
     background: #00000F;
     color: #FFFFF1;
     font-size: 30px;
-    font-family: sans-serif;
+    font-family: "Didact Gothic", serif;
 
 }
 
@@ -16,12 +21,50 @@ section {
     position: relative;
     display: flex;
     width: 100%;
-    height: 100vw;
+    height: calc(100vw - 100px);
+    top: 100px;
 }
 
+section.sticky{
+    position: sticky;
+    margin-top: 100px;
+}
 
-/* nav bar */
+section.full-screen{
+    height: 100vh;
+    top: 0;
+    margin-top: 0;
+    z-index: 3;
+}
 
+/*                                                  fonts                   */
+
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900 */
+
+.montserrat-italic {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.bangers-regular {
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.didact-gothic-regular {
+    font-family: "Didact Gothic", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+
+
+
+/*                                                  nav bar               */
 nav {
     position: fixed;
     top: 0;
@@ -49,13 +92,12 @@ nav ul li a {
     font-family: monospace;
 }
 
-
-/* about section*/
+/*                                                about section         */
 
 section.about .empty{
     flex-basis: 37.5vw;
     background: #FFFFFF;
-    border-radius: 100px;
+    border-radius: var(--border-radius);
 }
 
 section.about article{
@@ -69,7 +111,7 @@ section.about article .title{
     display: flex;
     align-items: flex-end;
     background: blue;
-    border-radius: 100px;
+    border-radius: var(--border-radius);
     padding: 6.27vw;
 }
 
@@ -78,12 +120,12 @@ section.about article .description {
     display: flex;
     align-items: center;
     background: pink;
-    border-radius: 100px;
+    border-radius: var(--border-radius);
     padding: 6.27vw;
     color: black;
 }
 
-/* project section */
+/*                                             project section              */
 section.project article{
     display: flex;
     width: 100%;
@@ -133,4 +175,49 @@ section.project.project-3 .text a{
     color: lightcoral;
 }
 
-/* contact section */
+/*                                          contact section */
+
+
+section.contact article ul {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+section.contact article ul li{
+    list-style: none;
+    margin-left: 50px;
+}
+
+section.contact article div h2{
+    margin-left: 15vw;
+}
+
+
+section.contact {
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(blue, lightgreen 20%,pink 70%, white);
+    border-radius: var(--border-radius);
+}
+
+section.contact article{
+    color: black;
+}
+
+/*                                          media query     */
+
+@media only screen and (max-width: 768px) {
+    html, body {
+        --border-radus:50px;
+        --gutter: 6.25vw;
+    }
+
+    h1{
+        font-size:60px;
+    }
+
+}
