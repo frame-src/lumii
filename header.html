@@ -47,6 +47,57 @@
       padding: 20px;
       background-color: #f0f0f0;
       height: 200vw;
+      display :flex;
+      align-items: center;
+    }
+
+    .square-top-right {
+      width: 10vw;
+      height: 10vw;
+      background: red;
+      border-top-right-radius: 100px; /* Smooth the top-right corner */
+      align-content: flex-end;
+      align-items: center;
+    }
+
+    .square-bottom-left {
+      margin-left: 1%;
+      width: 10vw;
+      height: 10vw;
+      background: blue;
+      border-bottom-left-radius: 100px; /* Smooth the top-right corner */
+      border-bottom-right-radius: 100px; 
+      align-content: flex-end;
+      align-items: center;
+    }
+
+    .square-bottom-right {
+      margin-left: 1%;
+      width: 10vw;
+      height: 10vw;
+      background: yellow;
+      border-top-left-radius: 100px; /* Smooth the top-right corner */
+      border-bottom-right-radius: 100px; 
+      align-content: flex-end;
+      align-items: center;
+    }
+
+    .outer-semicircle {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-top-left-radius: 100px;
+      position: relative;
+    }
+
+    .inner-semicircle {
+      width: 150px;
+      height: 75px;
+      background-color: white;
+      border-top-left-radius: 75px;
+      position: absolute;
+      top: 10px;
+      left: 25px;
     }
 
   </style>
@@ -55,14 +106,19 @@
   <div class="scroll-section" id="scrollSection">
     <div class="header-container" id="headerContainer">
       <div class="header">
-        <span class="black-half">HELLO</span><span class="orange-half">HELLO</span><span class="black-half">HELLO</span>
+        <span class="black-half">MELA</span><span class="orange-half">CA</span><span class="black-half">CO</span>
       </div>
     </div>
   </div>
 
   <div class="content">
-    <h1>Rest of the Page Content</h1>
-    <p>This is the vertical content that will be visible after the horizontal scrolling is completed.</p>
+    <div class="square-top-right"></div>
+    <div class="square-bottom-left"></div>
+    <div class="square-bottom-right"></div>
+    <div class="outer-semicircle">
+      <div class="inner-semicircle"></div>
+    </div>
+
   </div>
 
   <script>
