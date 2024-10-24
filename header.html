@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bauhaus Style Header with Horizontal Scroll</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Futura', sans-serif;
+      overflow-x: hidden; 
+    }
+
+    .scroll-section {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .header-container {
+      position: fixed;
+      top: 20%;
+      left: 0;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      width: 300vw;
+    }
+
+    .header {
+      font-size: 15vw;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .orange-half {
+      color: #ff5500; /* Bauhaus orange */
+      white-space: none;
+    }
+
+    .black-half {
+      color: #000000; /* Black coal color */
+    }
+
+    /* vertical content to display after horizontal scroll */
+    .content {
+      padding: 20px;
+      background-color: #f0f0f0;
+      height: 200vw;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="scroll-section" id="scrollSection">
+    <div class="header-container" id="headerContainer">
+      <div class="header">
+        <span class="black-half">HELLO</span><span class="orange-half">HELLO</span><span class="black-half">HELLO</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Rest of the Page Content</h1>
+    <p>This is the vertical content that will be visible after the horizontal scrolling is completed.</p>
+  </div>
+
+  <script>
+    const headerContainer = document.getElementById('headerContainer');
+    const scrollSection = document.getElementById('scrollSection');
+    const headerWidth = headerContainer.offsetWidth; // full width of the header container
+    const viewportWidth = window.innerWidth;
+    const totalScrollLength = headerWidth - viewportWidth; // total distance to scroll horizontally
+
+    window.addEventListener('scroll', function() {
+      let scrollValue = window.scrollY;
+
+      // Handle horizontal scrolling first
+      if (scrollValue <= totalScrollLength) {
+        headerContainer.style.transform = `translateX(${-scrollValue}px)`;
+        document.body.style.overflowY = 'hidden'; // disable vertical scroll during horizontal scroll
+      } else {
+        document.body.style.overflowY = 'auto'; // enable vertical scrolling after horizontal scroll ends
+      }
+    });
+  </script>
+</body>
+</html>
