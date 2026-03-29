@@ -220,7 +220,7 @@ section {
   font-family: 'Oi', system-ui;
   font-size: 2.5rem;
   margin-bottom: 30px;
-  color: var(--accent-color);
+  color: var(--liquid-color);
 }
 
 .bio ul {
