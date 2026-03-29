@@ -10,6 +10,8 @@
   --accent-color: #ff5722;
   --accent-soft: #fce4ec;
   --card-bg: #ffffff;
+  --main-font: 'DM Sans', sans-serif;
+  --display-font: 'Danfo', serif;
 }
 
 * {
@@ -24,9 +26,38 @@ html {
 
 body {
   background-color: var(--bg-color);
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--main-font);
   color: var(--text-primary);
   line-height: 1.6;
+}
+
+/* Header & Logo */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 60px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.logo-container {
+  pointer-events: auto;
+}
+
+.site-logo {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: grayscale(1) contrast(1.2);
+  transition: all 0.3s ease;
+}
+
+.site-logo:hover {
+  filter: grayscale(0) contrast(1);
+  transform: scale(1.1);
 }
 
 section {
@@ -48,14 +79,27 @@ section {
   margin: 0 auto;
 }
 
+/* Shared Display Font Settings */
+.display-text {
+  font-family: var(--display-font);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "ELSH" 39;
+}
+
 /* Landing Section */
 .hero .welcome-section {
   flex: 1.2;
 }
 
 .hero h1 {
-  font-family: 'Oi', system-ui;
-  font-size: 4rem;
+  font-family: var(--display-font);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "ELSH" 39;
+  font-size: 5rem;
   color: var(--text-primary);
   margin-bottom: 30px;
   line-height: 1.1;
@@ -243,10 +287,14 @@ section {
 }
 
 .bio h2 {
-  font-family: 'Oi', system-ui;
+  font-family: var(--display-font);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "ELSH" 39;
   font-size: 2.5rem;
   margin-bottom: 30px;
-  color: var(--text-primary);
+  color: var(--liquid-color);
 }
 
 .bio ul {
@@ -298,7 +346,11 @@ section {
 }
 
 .projects-header h2 {
-  font-family: 'Oi', system-ui;
+  font-family: var(--display-font);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "ELSH" 39;
   font-size: 3rem;
   color: var(--text-primary);
   margin-bottom: 20px;
@@ -349,7 +401,11 @@ section {
 }
 
 .project-info h3 {
-  font-family: 'Oi', system-ui;
+  font-family: var(--display-font);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "ELSH" 39;
   font-size: 1.5rem;
   margin-bottom: 15px;
   color: var(--text-primary);
@@ -389,7 +445,11 @@ section {
 }
 
 .contact-header h2 {
-  font-family: 'Oi', system-ui;
+  font-family: var(--display-font);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "ELSH" 39;
   font-size: 3.5rem;
   color: var(--text-primary);
   margin-bottom: 30px;
@@ -404,7 +464,11 @@ section {
 }
 
 .social-item {
-  font-family: 'Oi', system-ui;
+  font-family: var(--display-font);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "ELSH" 39;
   font-size: 1.5rem;
   text-decoration: none;
   color: var(--text-primary);
@@ -415,7 +479,8 @@ section {
 }
 
 .social-item:hover {
-  background-color: var(--text-primary);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
   color: #fff;
   transform: scale(1.05);
 }
