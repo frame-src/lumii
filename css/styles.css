@@ -235,7 +235,9 @@ section {
 
 /* Bio Section */
 .bio {
-  background-color: #fff;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('../assets/img/paper.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .bio-image {
@@ -309,6 +311,7 @@ section {
   overflow-x: hidden;
   align-items: flex-start;
   padding-left: 7.5%;
+  padding-right: 7.5%;
 }
 
 .projects-header {
