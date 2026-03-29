@@ -225,6 +225,7 @@ section {
 
 .bio ul {
   list-style: none;
+  margin-bottom: 30px;
 }
 
 .bio li {
@@ -238,6 +239,23 @@ section {
   display: block;
   font-size: 1.2rem;
   margin-bottom: 5px;
+}
+
+.github-link {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--text-primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.github-link:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
 }
 
 /* Responsive */
