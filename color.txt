@@ -1,2 +1,0 @@
-Blue : color: #3c00ff; 
-Blue: blue;
