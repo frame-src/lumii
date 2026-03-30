@@ -59,6 +59,56 @@ section {
   font-variation-settings: "ELSH" 39;
 }
 
+/* Floating Navbar */
+.floating-nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.floating-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.floating-nav ul li a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.floating-nav ul li:nth-child(1) a:hover,
+.floating-nav ul li:nth-child(1) a.active {
+  background-color: #E6E6F8;
+}
+.floating-nav ul li:nth-child(2) a:hover,
+.floating-nav ul li:nth-child(2) a.active {
+  background-color: #FBE5E3;
+}
+.floating-nav ul li:nth-child(3) a:hover,
+.floating-nav ul li:nth-child(3) a.active {
+  background-color: #F6F6DE;
+}
+.floating-nav ul li:nth-child(4) a:hover,
+.floating-nav ul li:nth-child(4) a.active {
+  background-color: #B6D6E4;
+}
+
 /* Landing Section */
 .hero .welcome-section {
   flex: 1.2;
@@ -267,7 +317,7 @@ section {
   font-variation-settings: "ELSH" 39;
   font-size: 2.5rem;
   margin-bottom: 30px;
-  color: var(--liquid-color);
+  color: var(--text-primary);
 }
 
 .bio ul {
@@ -300,9 +350,10 @@ section {
 }
 
 .github-link:hover {
-  background-color: var(--accent-color);
+  background-color: #F6F6DE;
+  color: var(--text-primary);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Projects Section */
@@ -368,6 +419,12 @@ section {
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: pointer;
 }
+
+.project-card:nth-child(1) { background-color: #E6E6F8; }
+.project-card:nth-child(2) { background-color: #FBE5E3; }
+.project-card:nth-child(3) { background-color: #F6F6DE; }
+.project-card:nth-child(4) { background-color: #B6D6E4; }
+.project-card:nth-child(5) { background-color: #F9DBBD; }
 
 .project-card:hover {
   transform: translateY(-15px);
@@ -450,10 +507,31 @@ section {
 }
 
 .social-item:hover {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  color: #fff;
   transform: scale(1.05);
+}
+
+.social-item:nth-child(1):hover {
+  background-color: #E6E6F8;
+  border-color: #E6E6F8;
+  color: var(--text-primary);
+}
+
+.social-item:nth-child(2):hover {
+  background-color: #FBE5E3;
+  border-color: #FBE5E3;
+  color: var(--text-primary);
+}
+
+.social-item:nth-child(3):hover {
+  background-color: #F6F6DE;
+  border-color: #F6F6DE;
+  color: var(--text-primary);
+}
+
+.social-item:nth-child(4):hover {
+  background-color: #B6D6E4;
+  border-color: #B6D6E4;
+  color: var(--text-primary);
 }
 
 .footer {
@@ -484,6 +562,20 @@ section {
 
 /* Responsive */
 @media (max-width: 992px) {
+  .floating-nav {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px 15px;
+  }
+  .floating-nav ul {
+    gap: 5px;
+    justify-content: space-around;
+  }
+  .floating-nav ul li a {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+
   .wrapper {
     flex-direction: column-reverse;
     gap: 60px;
@@ -518,5 +610,13 @@ section {
   .social-item {
     padding: 10px 25px;
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-nav {
+    top: auto;
+    bottom: 20px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
   }
 }

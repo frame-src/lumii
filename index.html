@@ -11,13 +11,23 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body id="top">
+  <!-- Navbar -->
+  <nav class="floating-nav">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="wrapper">
       <div class="welcome-section">
         <h1>Welcome!</h1>
         <p>I'm <strong>Francesco</strong>, a passionate software developer exploring AI solution development and agentic engineering.</p>
-        <p class="secondary-text">I have a deep love for clean design and the power of being minimalistic.</p>
+        <p class="secondary-text">I have a deep love for clean design and the desire of being minimalistic.</p>
         <div class="scroll-hint">Scroll down to explore &darr;</div>
       </div>
 
@@ -46,13 +56,13 @@
   </section>
 
   <!-- Bio Section -->
-  <section class="bio">
+  <section class="bio" id="about">
     <div class="wrapper">
       <div class="bio-image">
         <img src="assets/img/me.jpg" alt="Francesco">
       </div>
       <div class="bio-content">
-        <h2>My Journey</h2>
+        <h2>My Journey in pills</h2>
         <ul>
           <li><strong>Physics Background:</strong> I began my academic journey by studying physics at uniCt, which built my strong analytical and problem-solving foundation.</li>
           <li><strong>Relocation:</strong> I moved to Germany in 2022 to seek new challenges and opportunities in the European tech scene.</li>
@@ -67,7 +77,7 @@
   </section>
 
   <!-- Projects Section -->
-  <section class="projects">
+  <section class="projects" id="projects">
     <div class="projects-header">
       <h2>Recent Projects</h2>
       <p>A selection of my latest work in software development and AI engineering.</p>
@@ -105,12 +115,13 @@
   </section>
 
   <!-- Contact/Connect Section -->
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="contact-header">
       <h2>Let's connect</h2>
       <p>Whether you have a question or just want to say hi, my inbox is always open.</p>
     </div>
     <div class="social-links">
+        <a href="mailto:iframe+lumii@live.it" class="social-item email">Email</a>
       <a href="https://www.linkedin.com/" target="_blank" class="social-item linkedin">LinkedIn</a>
       <a href="https://github.com/frame-src" target="_blank" class="social-item github">GitHub</a>
       <a href="https://www.instagram.com/" target="_blank" class="social-item instagram">Instagram</a>
@@ -120,5 +131,28 @@
       <p>&copy; 2024 Francesco. All rights reserved.</p>
     </div>
   </section>
+
+  <!-- Scroll Spy Script -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.floating-nav ul li a');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, {
+      rootMargin: '-50% 0px -50% 0px'
+    });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
